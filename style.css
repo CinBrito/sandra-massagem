@@ -503,6 +503,99 @@ section {
 }
 
 /* =========================
+   GALLERY PAGE
+========================= */
+
+.gallery-hero {
+  padding: 160px 40px 80px;
+  background-color: var(--verde-claro);
+  text-align: center;
+}
+
+.gallery-hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gallery-hero h1 {
+  margin-bottom: 16px;
+}
+
+.gallery-subtitle {
+  font-size: 1.05rem;
+  color: rgba(63, 53, 43, 0.85);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.gallery-section {
+  padding: 80px 60px;
+  background-color: var(--branco);
+}
+
+.gallery-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px var(--sombra-suave);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-cta {
+  padding: 100px 40px;
+  background-color: var(--bege-claro);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.gallery-cta h2 {
+  max-width: 500px;
+  margin: 0 auto 16px;
+}
+
+.gallery-cta p {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.gallery-cta .btn-outline {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-active {
+  font-weight: 500;
+}
+
+.nav-active::after {
+  width: 80% !important;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -542,6 +635,14 @@ section {
 
   .service-cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-section {
+    padding: 60px 40px;
   }
 }
 
@@ -615,6 +716,27 @@ section {
   .footer {
     padding-top: 40px;
   }
+
+  .gallery-hero {
+    padding: 140px 30px 60px;
+  }
+
+  .gallery-section {
+    padding: 50px 30px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+
+  .gallery-cta {
+    padding: 70px 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -632,5 +754,26 @@ section {
 
   .nav {
     display: none;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .gallery-item img {
+    height: 240px;
+  }
+
+  .gallery-hero {
+    padding: 120px 20px 50px;
+  }
+
+  .gallery-section {
+    padding: 40px 20px;
+  }
+
+  .gallery-cta {
+    padding: 60px 20px;
   }
 }

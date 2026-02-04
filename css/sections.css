@@ -1,0 +1,367 @@
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  padding-top: 80px;
+  min-height: 80vh;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(63, 53, 43, 0.55) 0%,
+      rgba(63, 53, 43, 0.35) 40%,
+      rgba(63, 53, 43, 0.15) 70%,
+      rgba(63, 53, 43, 0.05) 100%
+    ),
+    url("../assets/images/hero.jpg");
+
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  isolation: isolate;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h1 {
+  line-height: 1.4;
+  letter-spacing: 0.6px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-subtitle {
+  margin: 20px auto 0;
+  max-width: 420px;
+
+  font-size: 1.05rem;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.85;
+}
+
+/* =========================
+   RITMO EDITORIAL
+========================= */
+
+section {
+  position: relative;
+  margin-bottom: 120px;
+  scroll-margin-top: 90px;
+}
+
+.hero,
+.philosophy,
+.therapist {
+  margin-bottom: 100px;
+}
+
+.services,
+.quote {
+  margin-bottom: 140px;
+}
+
+.contact {
+  margin-bottom: 0;
+}
+
+/* =========================
+   FILOSOFIA
+========================= */
+
+.philosophy {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+  align-items: stretch;
+}
+
+.philosophy-image {
+  position: relative;
+
+  background-image: url("../assets/images/filosofia.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.philosophy-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(63, 53, 43, 0.15);
+}
+
+.philosophy-text {
+  padding: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--bege-claro);
+}
+
+.philosophy-text p {
+  margin-top: 20px;
+}
+
+/* =========================
+   TERAPEUTA
+========================= */
+
+.therapist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+
+  padding: 0 60px;
+  align-items: stretch;
+  background-color: var(--bege-medio);
+}
+
+.therapist-text {
+  padding: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.therapist-text p {
+  margin-top: 20px;
+}
+
+.therapist-image {
+  position: relative;
+
+  background-image: url("../assets/images/sobre.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.therapist-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(63, 53, 43, 0.15);
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.services {
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.services h2 {
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+
+.service-cards {
+  margin-top: 60px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.service-card {
+  padding: 24px;
+  background-color: var(--branco);
+  border-radius: 4px;
+
+  box-shadow: 0 15px 30px var(--sombra-suave);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-card p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   FRASE / QUOTE
+========================= */
+
+.quote {
+  padding: 120px 40px;
+  background-color: var(--verde-claro);
+  text-align: center;
+}
+
+.quote blockquote {
+  max-width: 800px;
+  margin: auto;
+
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+}
+
+/* =========================
+   CONTATO
+========================= */
+
+.contact {
+  padding: 120px 40px;
+  background-color: var(--bege-claro);
+}
+
+.contact-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-text p {
+  margin-top: 20px;
+}
+
+.contact-card {
+  padding: 40px;
+  background-color: var(--branco);
+  border-radius: 4px;
+
+  box-shadow: 0 20px 40px var(--sombra-suave);
+}
+
+.contact-item {
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.contact-item span {
+  display: block;
+  margin-bottom: 6px;
+
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* =========================
+   RESPONSIVO — SECTIONS
+========================= */
+
+@media (max-width: 1024px) {
+  .philosophy-text,
+  .therapist-text {
+    padding: 60px;
+  }
+
+  .therapist {
+    padding: 0 40px;
+  }
+
+  .services {
+    padding: 80px 40px;
+  }
+
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(63, 53, 43, 0.55) 0%,
+        rgba(63, 53, 43, 0.35) 50%,
+        rgba(63, 53, 43, 0.15) 100%
+      ),
+      url("./assets/images/hero.jpg");
+    background-position: center;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .philosophy,
+  .therapist {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-image,
+  .therapist-image {
+    height: 300px;
+  }
+
+  .philosophy-text,
+  .therapist-text {
+    padding: 40px 30px;
+  }
+
+  .services {
+    padding: 60px 30px;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .quote {
+    padding: 80px 30px;
+  }
+
+  .quote blockquote {
+    font-size: 1.05rem;
+  }
+
+  .contact {
+    padding: 80px 30px;
+  }
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .philosophy-image,
+  .therapist-image {
+    height: 220px;
+  }
+}

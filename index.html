@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandra de Sá | Massoterapia</title>
+    <title>Sandra de Sá · Massoterapia</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,36 +13,35 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/header.css">   
+    <link rel="stylesheet" href="./css/sections.css">
+    <link rel="stylesheet" href="./css/footer.css"> 
 </head>
 
 <body>
 
     <header class="site-header">
-  <div class="header-inner">
+        <div class="header-inner">
 
-    <!-- Logo tipográfico (desktop) -->
-    <div class="logo logo-text">
-      Sandra de Sá
-    </div>
+            <!-- Logo tipográfico (desktop) -->
+            <div class="logo logo-text">
+                Sandra de Sá
+            </div>
 
-    <!-- Logo gráfico (mobile) -->
-    <img
-      src="./assets/images/logo-mono.png"
-      alt="Sandra de Sá Massoterapeuta"
-      class="logo logo-image"
-    />
+            <!-- Logo gráfico (mobile) -->
+            <img src="./assets/images/logo-mono.png" alt="Sandra de Sá Massoterapeuta" class="logo logo-image" />
 
-    <nav class="nav">
-      <a href="#filosofia">Filosofia</a>
-      <a href="#servicos">Serviços</a>
-      <a href="gallery.html">Galeria</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato" class="nav-cta">Agendar</a>
-    </nav>
+            <nav class="nav">
+                <a href="#philosophy">Filosofia</a>
+                <a href="#services">Serviços</a>
+                <a href="gallery.html">Galeria</a>
+                <a href="#about">Sobre</a>
+                <a href="#contact" class="nav-cta">Agendar</a>
+            </nav>
 
-  </div>
-</header>
+        </div>
+    </header>
 
 
     <!-- HERO -->
@@ -91,7 +90,9 @@
                 Para mim, a massoterapia é um caminho de bem-estar e equilíbrio, capaz de transformar a forma como nos
                 sentimos no dia a dia — no âmbito pessoal e também profissional.
             </p>
-                <button class="btn-outline">Agende sua massagem</button>
+            <a href="certificacoes.html" class="btn-outline">
+                Conheça minha formação
+            </a>
         </div>
         <div class="therapist-image"></div>
     </section>
@@ -169,31 +170,12 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-  <img src="./assets/images/sandra-massoterapeuta-logo.png"
-       alt="Sandra de Sá Massoterapeuta"
-       class="footer-logo">
+        <img src="./assets/images/sandra-massoterapeuta-logo.png" alt="Sandra de Sá Massoterapeuta" class="footer-logo">
 
-  <p>© 2026 Sandra de Sá · Massoterapia</p>
-</footer>
+        <p>© 2026 Sandra de Sá · Massoterapia</p>
+    </footer>
 
-<script>
-  let lastScrollY = window.scrollY;
-  const header = document.querySelector('.site-header');
-
-  window.addEventListener('scroll', () => {
-    if (window.innerWidth > 768) return;
-
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      header.classList.add('is-hidden');
-    } else {
-      header.classList.remove('is-hidden');
-    }
-
-    lastScrollY = currentScrollY;
-  });
-</script>
+    <script src="js/header-scroll.js"></script>
 
 </body>
 

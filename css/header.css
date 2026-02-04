@@ -1,0 +1,163 @@
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background-color: rgba(247, 243, 238, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border-bottom: 1px solid rgba(63, 53, 43, 0.08);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* =========================
+   HEADER INNER
+========================= */
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--marrom-texto);
+  text-decoration: none;
+}
+
+.logo-text {
+  display: block;
+}
+
+.logo-image {
+  display: none;
+  height: 36px;
+  opacity: 0.9;
+  filter: saturate(0.9);
+}
+
+.header-logo {
+  display: none;
+  height: 36px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  height: 36px;
+  padding: 0 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--marrom-texto);
+  text-decoration: none;
+  position: relative;
+}
+
+/* underline animado */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  bottom: 4px;
+  width: 0;
+  height: 1px;
+  background-color: var(--marrom-texto);
+  opacity: 0.6;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 80%;
+}
+
+/* estado ativo */
+.nav-active {
+  font-weight: 500;
+  letter-spacing: 1.2px;
+}
+
+.nav-active::after {
+  width: 80%;
+}
+
+/* CTA no menu */
+.nav-cta {
+  height: 32px;
+  padding: 0 14px;
+
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid var(--marrom-texto);
+  font-size: 0.8rem;
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+.nav-cta:hover {
+  background-color: var(--marrom-texto);
+  color: var(--branco);
+}
+
+/* =========================
+   RESPONSIVO — HEADER
+========================= */
+
+@media (max-width: 768px) {
+  .header-inner {
+    justify-content: center;
+    padding: 20px 24px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .logo-image {
+    display: block;
+    height: 120px;
+  }
+
+  .header-logo {
+    display: block;
+  }
+}

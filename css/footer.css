@@ -1,0 +1,27 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 60px 40px 40px;
+  background-color: var(--bege-claro);
+  text-align: center;
+
+  font-size: 0.8rem;
+}
+
+.footer-logo {
+  max-width: 180px;
+  margin: 0 auto 24px;
+  opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVO — FOOTER
+========================= */
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 40px;
+  }
+}

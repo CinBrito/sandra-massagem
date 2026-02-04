@@ -1,0 +1,153 @@
+/* =========================
+   GALLERY — HERO
+========================= */
+
+.gallery-hero {
+  height: 60vh;
+  margin-bottom: 100px;
+
+  background-color: var(--verde-oliva);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gallery-hero-content {
+  max-width: 700px;
+  padding: 0 30px;
+}
+
+.gallery-hero h1 {
+  margin-bottom: 16px;
+}
+
+.gallery-subtitle {
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+/* =========================
+   GALLERY — GRID
+========================= */
+
+.gallery-section {
+  padding: 0 60px 140px;
+}
+
+.gallery-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   GALLERY — CTA
+========================= */
+
+.gallery-cta {
+  padding: 100px 40px;
+  margin-bottom: 0;
+
+  background-color: var(--bege-claro);
+  text-align: center;
+}
+
+.gallery-cta h2 {
+  max-width: 500px;
+  margin: 0 auto 16px;
+}
+
+.gallery-cta p {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.gallery-cta .btn-outline {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* =========================
+   RESPONSIVO — GALLERY
+========================= */
+
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .gallery-section {
+    padding: 0 40px 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-hero {
+    height: 45vh;
+    margin-bottom: 60px;
+  }
+
+  .gallery-section {
+    padding: 0 24px 100px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* evita zoom estranho em touch */
+  .gallery-item img {
+    transform: none !important;
+  }
+
+  .gallery-cta {
+    padding: 80px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+    padding: 40px 20px;
+  }
+
+  .gallery-grid {
+    gap: 20px;
+  }
+
+  .gallery-item img {
+    height: 240px;
+  }
+
+  .gallery-hero {
+    padding: 120px 20px 50px;
+  }
+
+  .gallery-cta {
+    padding: 60px 20px;
+  }
+}

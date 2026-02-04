@@ -1,0 +1,122 @@
+/* =========================
+   DESIGN TOKENS
+========================= */
+
+:root {
+  --bege-claro: #F7F3EE;
+  --bege-medio: #E2C8B3;
+  --verde-oliva: #A8AD8F;
+  --verde-claro: #E6EBE0;
+  --marrom-texto: #3F352B;
+  --branco: #FFFFFF;
+
+  --sombra-suave: rgba(0, 0, 0, 0.06);
+  --sombra-media: rgba(0, 0, 0, 0.08);
+  --sombra-forte: rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 1.7;
+
+  color: var(--marrom-texto);
+  background-color: var(--branco);
+}
+
+/* textura sutil de fundo */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./assets/images/paper-fibers.png");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+p {
+  max-width: 520px;
+  font-size: 0.95rem;
+  color: rgba(63, 53, 43, 0.85);
+  text-wrap: pretty;
+}
+
+/* =========================
+   TIPOGRAFIA
+========================= */
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+h1 { font-size: 2.9rem; }
+h2 { font-size: 2.1rem; }
+h3 { font-size: 1.15rem; }
+
+h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin-top: 16px;
+  background-color: var(--marrom-texto);
+  opacity: 0.4;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn-outline {
+  margin-top: 30px;
+  padding: 14px 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  line-height: 1;
+
+  background: none;
+  color: var(--marrom-texto);
+  border: 1px solid var(--marrom-texto);
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--marrom-texto);
+  color: var(--branco);
+}

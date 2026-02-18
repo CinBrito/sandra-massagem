@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+{% block title %}Formações · Sandra de Sá{% endblock %}
+
+{% block content %}
+
+<section class="hero-base hero-soft">
+  <div class="hero-inner">
+    <h1>Formações e Certificações</h1>
+    <p>Uma trajetória construída com estudo contínuo, dedicação e amor ao cuidado.</p>
+  </div>
+</section>
+
+<section class="certifications-section">
+
+  {% if certifications %}
+    <div class="certifications-grid">
+      {% for cert in certifications %}
+        <div class="cert-card">
+          <h3>{{ cert.title }}</h3>
+
+          {% if cert.institution %}
+            <p class="cert-meta">{{ cert.institution }}</p>
+          {% endif %}
+
+          {% if cert.year %}
+            <p class="cert-year">{{ cert.year }}</p>
+          {% endif %}
+
+          {% if cert.description %}
+            <p class="cert-desc">{{ cert.description }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="cert-empty">Nenhuma certificação cadastrada ainda.</p>
+  {% endif %}
+
+</section>
+
+{% endblock %}

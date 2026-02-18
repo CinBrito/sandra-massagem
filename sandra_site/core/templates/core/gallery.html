@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+{% block title %}Sandra de Sá · Massoterapia{% endblock %}
+
+{% block content %}
+
+
+
+<section class="hero-base hero-soft">
+  <div class="hero-inner">
+    <h1>Galeria de Fotos</h1>
+    <p>Momentos de cuidado, bem-estar e conexão.</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+
+  <div class="gallery-grid">
+  {% for img in images %}
+    <div class="gallery-item">
+      <img src="{{ img.image.url }}" alt="{{ img.title }}">
+    </div>  
+    {% empty %}
+      <p style="text-align:center;">Em breve novas fotos ✨</p>
+    {% endfor %}
+</div>
+</section>
+
+<section class="gallery-cta">
+  <h2>Pronta para viver uma experiência de cuidado?</h2>
+  <p>Entre em contato e agende sua sessão personalizada.</p>
+  <a href="{% url 'home' %}#contact" class="btn-outline">Agendar Sessão</a>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,205 @@
+/* =========================
+   HEADER BASE
+========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background-color: rgba(247, 243, 238, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(63, 53, 43, 0.08);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* =========================
+   HEADER INNER
+========================= */
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--marrom-texto);
+}
+
+.logo-text {
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover .logo-text {
+  opacity: 0.7;
+}
+
+.logo-image {
+  display: none;
+  height: 36px;
+}
+
+/* =========================
+   NAV DESKTOP
+========================= */
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  height: 36px;
+  padding: 0 14px;
+
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--marrom-texto);
+  text-decoration: none;
+  position: relative;
+}
+
+/* underline animado */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  bottom: 4px;
+  width: 0;
+  height: 1px;
+  background-color: var(--marrom-texto);
+  opacity: 0.6;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 80%;
+}
+
+.nav-cta {
+  border: 1px solid var(--marrom-texto);
+  font-size: 0.8rem;
+}
+
+.nav-cta::after {
+  display: none;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-toggle {
+  display: none;
+  width: 26px;
+  height: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  height: 2px;
+  width: 100%;
+  background: var(--marrom-texto);
+  transition: all 0.3s ease;
+}
+
+/* animação vira X */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   MOBILE MENU (dropdown elegante)
+========================= */
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--bege-claro);
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  padding: 16px 24px;
+  text-decoration: none;
+  color: var(--marrom-texto);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  /* esconde menu desktop */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* mostra hamburger */
+  .menu-toggle {
+    display: flex;
+    justify-self: end;
+  }
+
+  /* logo mobile */
+  .logo-text {
+    display: none;
+  }
+
+  .logo-image {
+    display: block;
+    height: 80px;
+  }
+}

@@ -1,9 +1,8 @@
-{% extends "core/base.html" %}
+﻿{% extends "core/base.html" %}
+{% load static %}
 {% block title %}Sandra de Sá · Massoterapia{% endblock %}
 
 {% block content %}
-
-
 
 <section class="hero-base hero-soft">
   <div class="hero-inner">
@@ -17,12 +16,20 @@
   <div class="gallery-grid">
   {% for img in images %}
     <div class="gallery-item">
-      <img src="{{ img.image.url }}" alt="{{ img.title }}">
+      <button
+        type="button"
+        class="gallery-lightbox-trigger"
+        data-gallery-image="{{ img.image.url }}"
+        data-gallery-title="{{ img.title }}"
+        aria-label="Ver foto {{ img.title }}"
+      >
+        <img src="{{ img.image.url }}" alt="{{ img.title }}">
+      </button>
     </div>  
     {% empty %}
       <p style="text-align:center;">Em breve novas fotos ✨</p>
     {% endfor %}
-</div>
+  </div>
 </section>
 
 <section class="gallery-cta">
@@ -31,5 +38,17 @@
   <a href="{% url 'home' %}#contact" class="btn-outline">Agendar Sessão</a>
 </section>
 
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="gallery-lightbox-content" role="document">
+    <button type="button" class="gallery-lightbox-close" id="galleryLightboxClose" aria-label="Fechar imagem">
+      ×
+    </button>
+    <img id="galleryLightboxImage" src="" alt="">
+  </div>
+</div>
 
+{% endblock %}
+
+{% block extra_scripts %}
+  <script src="{% static 'core/js/gallery-lightbox.js' %}"></script>
 {% endblock %}

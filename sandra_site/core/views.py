@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from .models import GalleryImage
 from .models import Certification
+from .models import Service
 
 def home(request):
-    return render(request, 'core/index.html')
+    services = Service.objects.filter(is_active=True, is_featured=True)
+    return render(request, "core/index.html", {
+        "services": services,
+    })
 
 def gallery(request):
     images = GalleryImage.objects.all()
@@ -13,6 +17,19 @@ def gallery(request):
 
 def certifications(request):
     certifications = Certification.objects.all()
-    return render(request, "core/certifications.html", {
-        "certifications": certifications
+
+    context = {
+        "formacao": certifications.filter(section="formacao"),
+        "especializacoes": certifications.filter(section="especializacoes"),
+        "experiencia": certifications.filter(section="experiencia"),
+        "eventos": certifications.filter(section="eventos"),
+    }
+    return render(request, "core/certifications.html", context)
+
+
+def services(request):
+    services = Service.objects.filter(is_active=True)
+    return render(request, "core/services.html", {
+        "massagens": services.filter(category="massagens"),
+        "experiencias": services.filter(category="experiencias"),
     })

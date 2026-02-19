@@ -84,6 +84,122 @@
   font-size: 0.9rem;
 }
 
+/* LISTA DE CERTIFICADOS */
+
+.cert-section {
+  margin-bottom: 56px;
+}
+
+.cert-section h2 {
+  margin-bottom: 18px;
+}
+
+.cert-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cert-item {
+  position: relative;
+  background: white;
+  padding: 28px;
+  border-radius: 6px;
+  box-shadow: 0 15px 30px var(--sombra-suave);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 45px var(--sombra-media);
+}
+
+/* BADGE DO CERTIFICADO */
+
+.cert-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cert-title-row h3 {
+  margin: 0;
+}
+
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cert-badge img {
+  width: 34px;
+  height: 34px;
+  display: block;
+  background: transparent;
+  border: 0;
+}
+
+.cert-badge:focus-visible {
+  outline: 2px solid var(--marrom-texto);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* LIGHTBOX */
+
+.cert-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 2000;
+}
+
+.cert-lightbox.is-open {
+  display: flex;
+}
+
+.cert-lightbox-content {
+  position: relative;
+  max-width: min(900px, 90vw);
+  max-height: 85vh;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+.cert-lightbox-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  height: auto;
+}
+
+.cert-lightbox-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--marrom-texto);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
 /* EMPTY STATE */
 
 .cert-empty {
@@ -105,5 +221,9 @@
 
   .certifications-section {
     padding: 60px 24px 100px;
+  }
+
+  .cert-list {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,0 +1,38 @@
+﻿{% load static %}
+{% if items %}
+<section class="cert-section">
+    <h2>{{ title }}</h2>
+
+    <div class="cert-list">
+        {% for cert in items %}
+        <div class="cert-item">
+            <div class="cert-title-row">
+                <h3>{{ cert.title }}</h3>
+                {% if cert.certificate_image %}
+                <button
+                    type="button"
+                    class="cert-badge"
+                    data-cert-image="{{ cert.certificate_image.url }}"
+                    data-cert-title="{{ cert.title }}"
+                    aria-label="Ver certificado de {{ cert.title }}"
+                >
+                    <img src="{% static 'core/images/cert-badge.png' %}" alt="" aria-hidden="true">
+                </button>
+                {% endif %}
+            </div>
+
+            {% if cert.institution %}
+            <p class="cert-meta">
+                {{ cert.institution }}
+                {% if cert.year %} · {{ cert.year }}{% endif %}
+            </p>
+            {% endif %}
+
+            {% if cert.description %}
+            <p>{{ cert.description }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

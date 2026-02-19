@@ -179,7 +179,7 @@ section {
 .therapist-image {
   position: relative;
 
-  background-image: url("./images/sobre.jpg");
+  background-image: url("../images/sobre.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -215,12 +215,13 @@ section {
 }
 
 .service-card {
-  padding: 24px;
+  padding: 0;
   background-color: var(--branco);
   border-radius: 4px;
-
+  border: none;
   box-shadow: 0 15px 30px var(--sombra-suave);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
 }
 
 .service-card:hover {
@@ -228,15 +229,49 @@ section {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
 }
 
-.service-card img {
+.service-card-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 24px;
+}
+
+.service-card-summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-card-summary img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.service-card p {
-  margin-top: 10px;
+.service-card-summary h3 {
+  margin-top: 16px;
+}
+
+.service-card-hint {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.service-card-body {
+  padding: 0 24px 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card-body p {
+  margin-top: 16px;
   font-size: 0.9rem;
+}
+
+.service-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  opacity: 0.7;
 }
 
 /* =========================

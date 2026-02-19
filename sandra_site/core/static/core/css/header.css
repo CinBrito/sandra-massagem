@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  overflow: visible;
 
   background-color: rgba(247, 243, 238, 0.85);
   backdrop-filter: blur(6px);
@@ -118,14 +119,16 @@
 
 .menu-toggle {
   display: none;
-  width: 26px;
-  height: 20px;
+  width: 32px;
+  height: 26px;
   border: none;
   background: none;
   cursor: pointer;
 
   flex-direction: column;
   justify-content: space-between;
+
+  padding: 4px; /* 🔑 espaço pro X respirar */
 }
 
 .menu-toggle span {
@@ -155,13 +158,22 @@
 .mobile-menu {
   display: none;
   flex-direction: column;
+
+  position: absolute; /* 🔑 tira do fluxo */
+  top: 100%;
+  left: 0;
+  width: 100%;
+
   background: var(--bege-claro);
   border-top: 1px solid rgba(0,0,0,0.05);
+
+  z-index: 999; /* 🔑 fica acima de tudo */
 }
 
 .mobile-menu.open {
   display: flex;
 }
+
 
 .mobile-menu a {
   padding: 16px 24px;

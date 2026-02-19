@@ -24,19 +24,9 @@ window.addEventListener('scroll', () => {
 const toggle = document.getElementById("menuToggle");
 const menu = document.getElementById("mobileMenu");
 
-toggle.addEventListener("click", () => {
-  toggle.classList.toggle("active");
-  menu.classList.toggle("open");
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav");
-
-  if (!toggle || !nav) return;
-
+if (toggle && menu) {
   toggle.addEventListener("click", () => {
     toggle.classList.toggle("active");
-    nav.classList.toggle("open");
+    menu.classList.toggle("open");
   });
-});
+}

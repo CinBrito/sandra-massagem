@@ -1,4 +1,4 @@
-{% extends "core/base.html" %}
+﻿{% extends "core/base.html" %}
 {% block title %}Sandra de Sá · Massoterapia{% endblock %}
 
 {% block content %}
@@ -27,7 +27,7 @@
             Acredito também que o cuidado com o corpo impacta diretamente a forma como nos sentimos, nos
             relacionamos e atuamos no dia a dia — inclusive no ambiente de trabalho.
         </p>
-        <a href="{% url 'home' %}#services" class="btn-outline">
+        <a href="{% url 'services' %}" class="btn-outline">
             Explore suas opções
         </a>
     </div>
@@ -50,7 +50,7 @@
             sentimos no dia a dia — no âmbito pessoal e também profissional.
         </p>
         <a href="{% url 'certifications' %}" class="btn-outline">
-            Conheça minha formação
+            Conheça minha trajetória
         </a>
     </div>
     <div class="therapist-image"></div>
@@ -61,24 +61,25 @@
     <h2>Atendimentos pensados para diferentes necessidades, momentos e contextos.</h2>
 
     <div class="service-cards">
-        <div class="service-card">
-            <img src="https://via.placeholder.com/400x300" alt="Massagem Terapêutica">
-            <h3>Massagem Terapêutica</h3>
-            <p>Alivie a tensão e restaure o equilíbrio.</p>
-        </div>
-
-        <div class="service-card">
-            <img src="https://via.placeholder.com/400x300" alt="Deep Tissue Massage">
-            <h3>Relaxing Deep Tissue</h3>
-            <p>Deep relief for chronic tension.</p>
-        </div>
-
-        <div class="service-card">
-            <img src="https://via.placeholder.com/400x300" alt="Prenatal Massage">
-            <h3>Prenatal Massage</h3>
-            <p>Gentle care for expecting mothers.</p>
-        </div>
+        {% for service in services %}
+        <details class="service-card">
+            <summary class="service-card-summary">
+                <img src="{{ service.image.url }}" alt="{{ service.alt_text|default:service.title }}">
+                <h3>{{ service.title }}</h3>
+                <span class="service-card-hint">Ver detalhes</span>
+            </summary>
+            <div class="service-card-body">
+                <p>{{ service.description }}</p>
+            </div>
+        </details>
+        {% empty %}
+        <p class="service-empty">Serviços em atualização.</p>
+        {% endfor %}
     </div>
+
+    <a href="{% url 'services' %}" class="btn-outline">
+        Conheça nossos serviços
+    </a>
 </section>
 
 <!-- FRASE / DEPOIMENTO -->
@@ -104,17 +105,24 @@
         <div class="contact-card">
             <p class="contact-item">
                 <span>Atendimento</span>
-                Conforme agendamento prévio
+                Agendamentos com hora marcada
             </p>
 
-            <!-- <p class="contact-item">
-                    <span>Localização</span>
-                    Atendimento com hora marcada
-                </p> -->
+            <p class="contact-item">
+                <span>Instagram</span>
+                <a href="http://instagram.com/sandradesamassoterapeuta" target="_blank"
+                    class="logo-link">@sandradesamassoterapeuta</a>
+            </p>
+
+            <p class="contact-item">
+            <span>Facebook</span>
+            <a href="http://facebook.com/sandradesamassoterapeuta" target="_blank"
+                class="logo-link">@sandradesamassoterapeuta</a>
+            </p>
 
             <p class="contact-item">
                 <span>Contato</span>
-                qual email coloco aqui?<br>
+                sandradesamassoterapeuta@gmail.com<br>
                 (21) 99919-2014
             </p>
 

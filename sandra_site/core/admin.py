@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import GalleryImage
 from .models import Certification
 from .models import Service
+from .models import Testimonial
+from django.utils.html import format_html
 
 @admin.register(GalleryImage)
 class GalleryImageAdmin(admin.ModelAdmin):
@@ -25,10 +27,17 @@ class ServiceAdmin(admin.ModelAdmin):
     ordering = ("category", "order", "title")
     list_filter = ("category", "is_active", "is_featured")
 
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ("name", "role", "order", "preview")
+    list_editable = ("order",)
+    ordering = ("order",)
+
     def preview(self, obj):
-        if obj.certificate_image:
+        if obj.photo:
             return format_html(
-                '<img src="{}" width="50" style="border-radius:4px;" />',
-                obj.certificate_image.url
+                '<img src="{}" width="40" style="border-radius:50%;" />',
+                obj.photo.url
             )
         return "-"

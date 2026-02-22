@@ -118,3 +118,35 @@ class Certification(models.Model):
 
     def __str__(self):
         return f"{self.get_section_display()} — {self.title}"
+
+
+class Testimonial(models.Model):
+    name = models.CharField(max_length=120, verbose_name="Nome")
+    text = models.TextField(verbose_name="Depoimento")
+
+    role = models.CharField(
+        max_length=120,
+        blank=True,
+        verbose_name="Cargo / Contexto",
+        help_text="Ex: Cliente, Evento corporativo, etc."
+    )
+
+    photo = models.ImageField(
+        upload_to="testimonials/",
+        blank=True,
+        null=True,
+        verbose_name="Foto (opcional)"
+    )
+
+    order = models.PositiveIntegerField(
+        default=0,
+        verbose_name="Ordem"
+    )
+
+    class Meta:
+        ordering = ["order"]
+        verbose_name = "Testemunho"
+        verbose_name_plural = "Testemunhos"
+
+    def __str__(self):
+        return self.name

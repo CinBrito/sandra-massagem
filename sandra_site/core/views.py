@@ -2,11 +2,14 @@ from django.shortcuts import render
 from .models import GalleryImage
 from .models import Certification
 from .models import Service
+from .models import Testimonial
 
 def home(request):
     services = Service.objects.filter(is_active=True, is_featured=True)
+    testimonials = Testimonial.objects.all()
     return render(request, "core/index.html", {
         "services": services,
+        "testimonials": testimonials,
     })
 
 def gallery(request):

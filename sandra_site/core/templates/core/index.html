@@ -1,4 +1,5 @@
 ﻿{% extends "core/base.html" %}
+{% load static %}
 {% block title %}Sandra de Sá · Massoterapia{% endblock %}
 
 {% block content %}
@@ -83,12 +84,45 @@
 </section>
 
 <!-- FRASE / DEPOIMENTO -->
-<section class="quote">
-    <blockquote>
-        “Um atendimento cuidadoso e profissional, que trouxe mais conforto, bem-estar e qualidade ao nosso dia a
-        dia.”
-    </blockquote>
+<section class="quote-section">
+  <div class="quote-container">
+
+    <h2>O que dizem sobre Sandra</h2>
+
+    <div class="quote-carousel">
+      <button type="button" class="quote-arrow quote-arrow-left" aria-label="Depoimentos anteriores" data-quote-prev>
+        ‹
+      </button>
+      <div class="quote-track-wrapper">
+        <div class="quote-track" id="quoteTrack">
+
+          {% for t in testimonials %}
+          <div class="quote-card">
+
+            {% if t.photo %}
+              <img src="{{ t.photo.url }}" class="quote-avatar" alt="{{ t.name }}">
+            {% endif %}
+
+            <p>“{{ t.text }}”</p>
+
+            <span>
+              {{ t.name }}
+              {% if t.role %} — {{ t.role }}{% endif %}
+            </span>
+
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+      <button type="button" class="quote-arrow quote-arrow-right" aria-label="Próximos depoimentos" data-quote-next>
+        ›
+      </button>
+    </div>
+
+  </div>
 </section>
+
 
 <section class="contact" id="contact">
     <div class="contact-inner">
@@ -134,4 +168,8 @@
     </div>
 </section>
 
+{% endblock %}
+
+{% block extra_scripts %}
+  <script src="{% static 'core/js/quote-carousel.js' %}"></script>
 {% endblock %}

@@ -1,4 +1,4 @@
-/* =========================
+﻿/* =========================
    HERO SYSTEM
 ========================= */
 
@@ -53,8 +53,6 @@
    HERO
 ========================= */
 
-
-
 .hero-image {
   position: relative;
   height: 80vh;
@@ -101,7 +99,7 @@ section {
 }
 
 .services,
-.quote {
+.quote-section {
   margin-bottom: 140px;
 }
 
@@ -275,23 +273,120 @@ section {
 }
 
 /* =========================
-   FRASE / QUOTE
+   QUOTE — INFINITE
 ========================= */
 
-.quote {
+.quote-section {
+  background: var(--verde-claro);
   padding: 120px 40px;
-  background-color: var(--verde-claro);
+}
+
+.quote-container {
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.quote blockquote {
-  max-width: 800px;
-  margin: auto;
+.quote-container h2 {
+  margin-bottom: 60px;
+}
 
-  font-size: 1.3rem;
+.quote-carousel {
+  position: relative;
+}
+
+.quote-track-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 56px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.quote-track-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.quote-track {
+  display: flex;
+  gap: 32px;
+  will-change: transform;
+  scroll-snap-type: x proximity;
+}
+
+.quote-card {
+  min-width: 320px;
+  max-width: 320px;
+  background: white;
+  padding: 28px;
+  border-radius: 6px;
+  box-shadow: 0 15px 30px var(--sombra-suave);
+  text-align: left;
+  scroll-snap-align: start;
+}
+
+.quote-card p {
   font-style: italic;
-  line-height: 1.8;
-  letter-spacing: 0.4px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.quote-card span {
+  font-size: 0.75rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.quote-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
+
+.quote-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--marrom-texto);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  font-size: 22px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.quote-arrow-left {
+  left: 8px;
+}
+
+.quote-arrow-right {
+  right: 8px;
+}
+
+.quote-arrow:focus-visible {
+  outline: 2px solid var(--marrom-texto);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .quote-track-wrapper {
+    padding: 0 44px;
+  }
+
+  .quote-card {
+    min-width: 260px;
+  }
 }
 
 /* =========================
@@ -373,7 +468,7 @@ section {
         rgba(63, 53, 43, 0.35) 50%,
         rgba(63, 53, 43, 0.15) 100%
       ),
-      url("./images/hero.jpg");
+      url("../images/hero.jpg");
     background-position: center;
   }
 
@@ -406,12 +501,8 @@ section {
     gap: 50px;
   }
 
-  .quote {
+  .quote-section {
     padding: 80px 30px;
-  }
-
-  .quote blockquote {
-    font-size: 1.05rem;
   }
 
   .contact {
@@ -434,7 +525,6 @@ section {
     height: 220px;
   }
 }
-
 
 @media (max-width: 768px) {
   .hero-base {

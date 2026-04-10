@@ -19,8 +19,86 @@
   margin-bottom: 18px;
 }
 
+.review-page {
+  padding: 80px 60px 120px;
+}
+
+.review-layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.review-intro p + p {
+  margin-top: 18px;
+}
+
+.review-form-card {
+  padding: 40px;
+  background-color: var(--branco);
+  border-radius: 4px;
+  box-shadow: 0 20px 40px var(--sombra-suave);
+}
+
+.review-form {
+  display: grid;
+  gap: 18px;
+}
+
+.review-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(63, 53, 43, 0.18);
+  background-color: rgba(247, 243, 238, 0.75);
+  color: var(--marrom-texto);
+  font: inherit;
+}
+
+.review-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  outline: 1px solid var(--marrom-texto);
+  border-color: var(--marrom-texto);
+}
+
+.review-form-note {
+  max-width: none;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.quote-action {
+  margin-top: 32px;
+}
+
+.quote-action p {
+  margin: 0 auto;
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .services-page {
+    padding: 70px 40px 100px;
+  }
+
+  .review-page {
     padding: 70px 40px 100px;
   }
 }
@@ -28,5 +106,18 @@
 @media (max-width: 768px) {
   .services-page {
     padding: 60px 24px 90px;
+  }
+
+  .review-page {
+    padding: 60px 24px 90px;
+  }
+
+  .review-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .review-form-card {
+    padding: 28px;
   }
 }

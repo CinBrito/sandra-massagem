@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deixe Sua Opinião · Sandra de Sá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/certifications.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="icon" href="assets/images/logo-title.ico">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <span class="logo logo-text">Sandra de Sá · Massoterapia</span>
+                <img src="assets/images/logo-mono.png" alt="Sandra de Sá Massoterapeuta" class="logo logo-image">
+            </a>
+            <nav class="nav nav-desktop">
+                <a href="index.html#philosophy">Filosofia</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="gallery.html">Galeria</a>
+                <a href="index.html#about">Sobre</a>
+                <a href="index.html#contact" class="nav-cta">Agendar</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html#philosophy">Filosofia</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="gallery.html">Galeria</a>
+                <a href="index.html#about">Sobre</a>
+                <a href="index.html#contact">Agendar</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-base hero-soft">
+        <div class="hero-inner">
+            <h1>Compartilhe sua experiência</h1>
+            <p>Se você já recebeu um atendimento, pode enviar sua opinião para análise e possível publicação no site.
+            </p>
+        </div>
+    </section>
+
+    <section class="review-page">
+        <div class="review-layout">
+            <div class="review-intro">
+                <h2>Seu depoimento é bem-vindo</h2>
+                <p>
+                    Este espaço foi criado para receber relatos de pessoas que já viveram um atendimento com Sandra.
+                    Se desejar, sua mensagem poderá ser selecionada e adicionada à seção de opiniões do site.
+                </p>
+                <p>
+                    Ao enviar o formulário, seu aplicativo de e-mail será aberto com a mensagem preenchida. Você pode
+                    revisar o texto antes de enviar.
+                </p>
+                <a href="index.html" class="btn-outline">Voltar para o início</a>
+            </div>
+
+            <div class="review-form-card">
+                <form class="review-form" action="mailto:sandradesamassoterapeuta@gmail.com?subject=Novo%20depoimento%20para%20o%20site" method="post" enctype="text/plain">
+                    <label for="review-name">
+                        Nome
+                        <input id="review-name" name="Nome" type="text" required>
+                    </label>
+
+                    <label for="review-email">
+                        E-mail
+                        <input id="review-email" name="Email" type="email" required>
+                    </label>
+
+                    <label for="review-context">
+                        Contexto do atendimento
+                        <input id="review-context" name="Contexto" type="text" placeholder="Ex: sessão individual, evento corporativo">
+                    </label>
+
+                    <label for="review-message">
+                        Sua opinião
+                        <textarea id="review-message" name="Depoimento" required placeholder="Conte como foi sua experiência."></textarea>
+                    </label>
+
+                    <p class="review-form-note">
+                        Envie apenas informações que você autoriza compartilhar. O conteúdo pode ser editado para formatação antes de
+                        entrar no site.
+                    </p>
+
+                    <button type="submit" class="btn-outline">Enviar depoimento</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <img src="assets/images/sandra-massoterapeuta-logo.png" alt="Sandra de Sá Massoterapeuta" class="footer-logo">
+        <p>© 2026 Sandra de Sá · Massoterapia</p>
+    </footer>
+
+    <script src="js/header-scroll.js"></script>
+</body>
+
+</html>

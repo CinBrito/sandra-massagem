@@ -93,6 +93,18 @@
   text-align: center;
 }
 
+.quote-action a {
+  color: var(--marrom-texto);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(63, 53, 43, 0.35);
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.quote-action a:hover {
+  opacity: 0.75;
+  border-bottom-color: var(--marrom-texto);
+}
+
 @media (max-width: 1024px) {
   .services-page {
     padding: 70px 40px 100px;
